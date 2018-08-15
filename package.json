@@ -5,9 +5,12 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "start": "node server.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
     "vue": "^2.5.17"
   },
   "devDependencies": {
