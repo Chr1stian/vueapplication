@@ -1,9 +1,9 @@
 pipeline {
   agent {
-         dockerfile {
-          filename 'Dockerfile'
-          additionalBuildArgs '-u root'
-         }
+      docker {
+           image 'node:9.11.1-alpine'
+           args '-u root -p 3000:80'
+       }
      }
       stages {
         stage('Building image') {
