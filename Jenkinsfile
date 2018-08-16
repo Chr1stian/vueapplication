@@ -1,20 +1,18 @@
 pipeline {
   agent {
-         dockerfile true {
-         args: '-u root'
-         }
+         dockerfile true
      }
     stages {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'npm install'
+                sh 'sudo npm install'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing...'
-                sh 'npm test'
+                sh 'sudo npm test'
             }
         }
         stage('Building image') {
