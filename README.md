@@ -19,3 +19,13 @@ npm run build
 ```
 npm run lint
 ```
+
+### Build docker
+```
+docker build .
+```
+
+### Run docker
+```
+docker run -p 3000:80 "dockercontainerID"
+```
