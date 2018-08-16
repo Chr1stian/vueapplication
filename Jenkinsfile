@@ -1,12 +1,4 @@
 pipeline {
-
-    agent {
-        docker {
-            image 'node:9.11.1-alpine'
-            args '-p 3000:80'
-        }
-    }
-
     stages {
         stage('Build') {
             steps {
@@ -19,6 +11,6 @@ pipeline {
                 echo 'Testing...'
                 sh 'npm test'
             }
-        }
-    }
+        }  
+      }
 }
