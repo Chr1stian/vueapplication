@@ -8,10 +8,8 @@
     <v-footer class="footer" :fixed="fixed">
       <span>&copy; 2018</span>
       <div>
-        <span><a href="https://www.linkedin.com/in/christiannyvoll/"><img class="linkedinimg" src="@/assets/In-2C-14px.png" alt=""></a></span>
-        <span><a href="https://github.com/Chr1stian"><img class="githubimg" src="@/assets/GitHub-Mark-32px.png" alt=""></a></span>
-
-
+        <span><a href="https://www.linkedin.com/in/christiannyvoll/" arial-label="Link to creator LinkedIn profile"><img class="linkedinimg linkimg" src="@/assets/In-2C-128px-TM.png" alt></a></span>
+        <span><a href="https://github.com/Chr1stian"  arial-label="Link to creator Github profile"><img class="githubimg linkimg" src="@/assets/GitHub-Mark-120px-plus.png" alt></a></span>
       </div>
       <span>Christian Nyvoll</span>
     </v-footer>
@@ -54,10 +52,10 @@ export default {
   justify-content: space-between;
   padding-left: 10px;
   padding-right: 10px;
+  height: 65px !important;
 }
-.linkedinimg {
-  width: auto;
-  height: auto;
+.linkimg {
+  width: 30px;
 }
 
 
