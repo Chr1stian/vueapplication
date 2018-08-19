@@ -35,7 +35,7 @@
              <img class="githubimg linkimg" src="@/assets/GitHub-Mark-120px-plus.png" alt>
            </v-list-tile-action>
            <v-list-tile-content>
-             <v-list-tile-title>{{ item.sourcecode }}</v-list-tile-title>
+             <v-list-tile-title>Github</v-list-tile-title>
            </v-list-tile-content>
          </v-list-tile>
        </a>
@@ -46,9 +46,9 @@
             :key="subItem.title"
             @click=""
           >
-          <v-list-tile-action>
+          <v-list-tile-action class="tech-icon-div">
             <v-icon></v-icon>
-             <img class="linkimg" :src="subItem.icon" alt="tech-icon-image">
+             <img class="linkimg" :src="subItem.icon" alt>
           </v-list-tile-action>
             <v-list-tile-content>
               <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
@@ -85,9 +85,14 @@ export default {
   data() {
     return {
       projectItems: [
-        {name: 'Project 1', type: 'Hobby/Volunteer project', pagelink: null, githublink: 'https://github.com/Chr1stian/vueapplication/blob/master/src/components/Projects.vue', location: 'Page link', sourcecode: 'Github', info:'Additional information', items: [{title: 'Angular', icon: require('../assets/angular-icon.png')}, {title: 'Node.js', icon: 'nodejsico'}]},
-        {name: 'Project 2', type: 'School project', pagelink: 'link'}
-      ],
+        {name: 'Automatic Kiosk Accounting', type: 'Hobby/Volunteer Project', pagelink: null, githublink: 'https://github.com/dotkom/onlineweb4', location: '', info:'Currently in the planning phase. An effort to make the existing kiosk system for the students be automatically accounted trough our accountsystems (fiken) API', items: [{title: 'Django', icon: require('../assets/django-icon.png')}, {title: '(HAL)REST API', icon: ''}]},
+        {name: 'Project Page (current)', type: 'Hobby Project', pagelink: null, githublink: 'https://github.com/Chr1stian/vueapplication', location: '', info:'Small personal project to test out new technologies and give an overwiew of some of my project. Setup with docker image and one line push/deploy to dokku server on DigitalOcean', items: [{title: 'Vue', icon: require('../assets/vue-icon.png')}, {title: 'Docker', icon: require('../assets/docker-icon.png')}]},
+        {name: 'Car Usage Mobile Application', type: 'Bachelor Project', pagelink: null, githublink: 'https://github.com/TK-data/BilparkApp', location: '', info:'Customers for the project were Trondheim Kommune and Sparebank 1 Bilplan. Fullstack mobile application for both iOS and Android made with React Native. The application lets a user track their car usage and cost, connected with license number through Statens Vegvesens (closed) API.', items: [{title: 'React Native', icon: require('../assets/reactnative-icon.png')}, {title: 'Sails.js', icon: require('../assets/sails-icon.png')}, {title: 'MySQL', icon: require('../assets/mysql-icon.png')}]},
+        {name: 'Winesearch Web Application', type: 'School Project', pagelink: 'http://178.62.89.152:8082/', githublink: 'https://github.com/Chr1stian/it2810-webutvikling-h17-prosjekt-4-group-37', location: 'Page link', info:'NB: Some items might be bugged because the database is outdated. First project using Angular, developed as part of a course in three weeks. Uses the "MEAN-stack" which is full and amongst other lets the user save favorite wines and stores last searches', items: [{title: 'Angular', icon: require('../assets/angular-icon.png')}, {title: 'Node.js', icon: require('../assets/node-icon.png')}, {title: 'MongoDB', icon: require('../assets/mongodb-icon.png')}]},
+        {name: 'Personal Planner Web Application', type: 'School Project', pagelink: 'http://178.62.89.152:8080/', githublink: 'https://github.com/Chr1stian/it2810-webutvikling-h17-prosjekt-3-group-37', location: 'Page link', info:'First React project developed as part of a course in two weeks. Uses localstorage to remember user entries and displays collected information on a smart homepage', items: [{title: 'React', icon: require('../assets/react-icon.png')}, {title: 'Node.js', icon: require('../assets/node-icon.png')}]},
+        {name: 'Coursehelp Mobile Application', type: 'School Project', pagelink: null, githublink: 'https://github.com/prodoteam', location: '', info:'Android application developed to let students follow a course with questions and feedback realtime. Java application to let professors enter course info and answer students questions/see feedback.', items: [{title: 'Android', icon: require('../assets/android-icon.png')}, {title: 'Java', icon: require('../assets/java-icon.png')}, {title: 'MySQL', icon: require('../assets/mysql-icon.png')}]},
+        {name: 'Raspberry PI', type: 'Hobby projects', pagelink: null, githublink: null, location: '', info:'Home projects on the Raspberry PI also utilizing Arduino cards and electronic components. Network crawling with python to send welcome message on "facebook messenger" to guests upon arrival. MySQL database hosted for other projects and also setup to be used as web-server.', items: [{title: 'Python', icon: require('../assets/python-icon.png')}, {title: 'MySQL', icon: require('../assets/mysql-icon.png')}]},
+        ],
       show: false,
       currentlyShowing: null
     }
@@ -121,8 +126,9 @@ export default {
 .card {
   margin: 20px;
   flex-direction: row;
-  width: 45%;
-  min-width: 500px;
+  width: 30%;
+  min-width: 350px;
+  min-height: 350px;
   flex: 1;
 }
 .more-info-container {
@@ -139,6 +145,10 @@ export default {
 .title {
   background-color: #EEEEEE;
   font-size: 90% !important;
+}
+
+.tech-icon-div {
+  margin-right: 10px;
 }
 
 .dropdown-header {
