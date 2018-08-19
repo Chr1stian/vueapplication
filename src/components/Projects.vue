@@ -126,9 +126,8 @@ export default {
 .card {
   margin: 20px;
   flex-direction: row;
-  width: 30%;
-  min-width: 350px;
-  min-height: 350px;
+  min-width: 400px;
+  max-width: 400px;
   flex: 1;
 }
 .more-info-container {
