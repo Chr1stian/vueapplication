@@ -44,7 +44,7 @@ export default {
 
 <style scoped>
 .app {
-  background-color: #3c3e42;
+  background-color: #BDBDBD;
 }
 .footer {
   display: flex;

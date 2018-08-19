@@ -2,8 +2,8 @@
   <v-layout>
    <v-flex class="card-flex-container">
      <v-card flat class="card" v-for="item in projectItems" name="cards">
-       <v-navigation-drawer>
-           <v-toolbar flat>
+       <v-navigation-drawer class="drawer" stateless floating permanent>
+           <v-toolbar flat class="toolbar">
                <v-toolbar-title>{{item.name}}</v-toolbar-title>
                <v-spacer></v-spacer>
              </v-toolbar>
@@ -18,6 +18,7 @@
              <v-list-tile-title>{{ item.type }}</v-list-tile-title>
            </v-list-tile-content>
          </v-list-tile>
+         <v-divider></v-divider>
          <v-list-tile :key="item.title" @click="">
            <v-list-tile-action>
              <img class="pageurlimg linkimg" src="@/assets/icons-link.png" alt>
@@ -35,7 +36,7 @@
            </v-list-tile-content>
          </v-list-tile>
 
-          <v-card-title>Technologies:</v-card-title>
+          <v-card-title class="title">Technologies:</v-card-title>
          <v-list-tile
             v-for="subItem in item.items"
             :key="subItem.title"
@@ -51,6 +52,7 @@
           </v-list-tile>
        </v-list>
 
+       <v-divider></v-divider>
        <v-card-actions>
          Detailed project description
 
@@ -90,20 +92,22 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-}
 .card-flex-container {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   flex-direction: row;
-  background-color: #3c3e42;
+  background-color: #BDBDBD;
 }
+
+.drawer {
+  background-color: #EEEEEE;
+  width: 100% !important;
+}
+
 .card {
   margin: 20px;
-  padding: 10px;
   flex-direction: row;
-  background-color: #61646b;
   width: 45%;
   min-width: 500px;
   flex: 1;
@@ -113,5 +117,13 @@ h3 {
 }
 .linkimg {
   width: 30px;
+}
+
+.toolbar {
+  background-color: #EEEEEE;
+}
+
+.title {
+  background-color: #EEEEEE;
 }
 </style>
