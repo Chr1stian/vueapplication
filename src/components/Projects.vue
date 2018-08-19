@@ -1,7 +1,7 @@
 <template>
   <v-layout>
    <v-flex class="card-flex-container">
-     <v-card flat class="card" v-for="item in projectItems" name="cards">
+     <v-card flat class="card" v-for="(item, index) in projectItems" name="cards">
        <v-navigation-drawer class="drawer" stateless floating permanent>
            <v-toolbar flat class="toolbar">
                <v-toolbar-title>{{item.name}}</v-toolbar-title>
@@ -53,16 +53,16 @@
        </v-list>
 
        <v-divider></v-divider>
-       <v-card-actions>
+       <v-card-actions class="dropdown-header">
          Detailed project description
 
          <v-spacer></v-spacer>
-         <v-btn icon @click="show = !show">
+         <v-btn icon @click="showInfo(index)">
            <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
          </v-btn>
        </v-card-actions>
          <v-slide-y-transition class="more-info-container">
-           <v-card-text v-show="show">
+           <v-card-text v-if="currentlyShowing === index">
              {{item.info}}
            </v-card-text>
           </v-slide-y-transition>
@@ -84,7 +84,17 @@ export default {
         {name: 'Project 1', type: 'Hobby/Volunteer project', location: 'Page link', sourcecode: 'Github', info:'Additional information', items: [{title: 'Angular', icon: require('../assets/angular-icon.png')}, {title: 'Node.js', icon: 'nodejsico'}]},
         {name: 'Project 2', type: 'School project'}
       ],
-      show: false
+      show: false,
+      currentlyShowing: null
+    }
+  },
+  methods:{
+    showInfo: function (index) {
+      if(this.currentlyShowing === index){
+        this.currentlyShowing = null;
+      } else {
+        this.currentlyShowing = index;
+      }
     }
   }
 }
@@ -101,7 +111,6 @@ export default {
 }
 
 .drawer {
-  background-color: #EEEEEE;
   width: 100% !important;
 }
 
@@ -124,6 +133,10 @@ export default {
 }
 
 .title {
+  background-color: #EEEEEE;
+}
+
+.dropdown-header {
   background-color: #EEEEEE;
 }
 </style>
