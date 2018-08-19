@@ -19,7 +19,8 @@
            </v-list-tile-content>
          </v-list-tile>
          <v-divider></v-divider>
-         <v-list-tile :key="item.title" @click="">
+         <a :href="item.pagelink" arial-label="Link to project page">
+         <v-list-tile :key="item.title" @click="" v-if=item.pagelink>
            <v-list-tile-action>
              <img class="pageurlimg linkimg" src="@/assets/icons-link.png" alt>
            </v-list-tile-action>
@@ -27,7 +28,9 @@
              <v-list-tile-title>{{ item.location }}</v-list-tile-title>
            </v-list-tile-content>
          </v-list-tile>
-         <v-list-tile :key="item.title" @click="">
+       </a>
+         <a :href="item.githublink" arial-label="Link to project Github page">
+         <v-list-tile :key="item.title" @click="" v-if=item.githublink>
            <v-list-tile-action>
              <img class="githubimg linkimg" src="@/assets/GitHub-Mark-120px-plus.png" alt>
            </v-list-tile-action>
@@ -35,6 +38,7 @@
              <v-list-tile-title>{{ item.sourcecode }}</v-list-tile-title>
            </v-list-tile-content>
          </v-list-tile>
+       </a>
 
           <v-card-title class="title">Technologies:</v-card-title>
          <v-list-tile
@@ -81,8 +85,8 @@ export default {
   data() {
     return {
       projectItems: [
-        {name: 'Project 1', type: 'Hobby/Volunteer project', location: 'Page link', sourcecode: 'Github', info:'Additional information', items: [{title: 'Angular', icon: require('../assets/angular-icon.png')}, {title: 'Node.js', icon: 'nodejsico'}]},
-        {name: 'Project 2', type: 'School project'}
+        {name: 'Project 1', type: 'Hobby/Volunteer project', pagelink: null, githublink: 'https://github.com/Chr1stian/vueapplication/blob/master/src/components/Projects.vue', location: 'Page link', sourcecode: 'Github', info:'Additional information', items: [{title: 'Angular', icon: require('../assets/angular-icon.png')}, {title: 'Node.js', icon: 'nodejsico'}]},
+        {name: 'Project 2', type: 'School project', pagelink: 'link'}
       ],
       show: false,
       currentlyShowing: null
@@ -134,6 +138,7 @@ export default {
 
 .title {
   background-color: #EEEEEE;
+  font-size: 90% !important;
 }
 
 .dropdown-header {
