@@ -62,7 +62,7 @@
 
          <v-spacer></v-spacer>
          <v-btn icon @click="showInfo(index)">
-           <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
+           <v-icon>{{ index === currentlyShowing ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</v-icon>
          </v-btn>
        </v-card-actions>
          <v-slide-y-transition class="more-info-container">
@@ -113,7 +113,6 @@ export default {
 <style scoped>
 .card-flex-container {
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
   flex-direction: row;
   background-color: #BDBDBD;
