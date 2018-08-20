@@ -57,6 +57,7 @@
        </v-list>
 
        <v-divider></v-divider>
+       <div class="details-div">
        <v-card-actions class="dropdown-header">
          Detailed project description
 
@@ -70,6 +71,7 @@
              {{item.info}}
            </v-card-text>
           </v-slide-y-transition>
+        </div>
       </v-navigation-drawer>
      </v-card>
    </v-flex>
@@ -124,7 +126,7 @@ export default {
 
 .card {
   margin: 20px;
-  flex-direction: row;
+  flex-direction: column;
   min-width: 400px;
   max-width: 400px;
   flex: 1;
@@ -132,6 +134,10 @@ export default {
 .more-info-container {
   height: 75%;
 }
+
+.details-div {
+}
+
 .linkimg {
   width: 30px;
 }
