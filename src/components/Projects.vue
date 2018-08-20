@@ -9,7 +9,7 @@
              </v-toolbar>
         <v-divider></v-divider>
 
-       <v-list dense>
+       <v-list dense class="list">
          <v-list-tile>
            <v-list-tile-action>
             Type:
@@ -57,7 +57,6 @@
        </v-list>
 
        <v-divider></v-divider>
-       <div class="details-div">
        <v-card-actions class="dropdown-header">
          Detailed project description
 
@@ -71,7 +70,6 @@
              {{item.info}}
            </v-card-text>
           </v-slide-y-transition>
-        </div>
       </v-navigation-drawer>
      </v-card>
    </v-flex>
@@ -122,6 +120,8 @@ export default {
 
 .drawer {
   width: 100% !important;
+  display: flex;
+  flex-direction: column;
 }
 
 .card {
@@ -131,11 +131,13 @@ export default {
   max-width: 400px;
   flex: 1;
 }
-.more-info-container {
-  height: 75%;
+
+.list {
+
 }
 
-.details-div {
+.more-info-container {
+  height: 75%;
 }
 
 .linkimg {
@@ -157,5 +159,6 @@ export default {
 
 .dropdown-header {
   background-color: #EEEEEE;
+  margin-top: auto;
 }
 </style>
