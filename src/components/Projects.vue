@@ -127,7 +127,7 @@ export default {
 .card {
   margin: 20px;
   flex-direction: column;
-  min-width: 400px;
+  min-width: 300px;
   max-width: 400px;
   flex: 1;
 }
